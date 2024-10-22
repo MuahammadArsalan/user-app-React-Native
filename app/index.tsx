@@ -42,7 +42,7 @@ setErr(true)
    {user && user.map((item :Item)=>{
     return  <View style={styles.item}>
     <Text style={styles.title}>Name: {item.name} </Text>
-    <Link href={`/details/${item.id}`}><Text  style={styles.btn}><Text style={styles.cbtn}>Details</Text></Text></Link> 
+    <Link href={`/details/${item.id}`}  style={styles.btn}><Text  style={styles.cbtn}><Text>Details</Text></Text></Link> 
   </View>
 
    })}

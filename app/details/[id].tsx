@@ -1,6 +1,6 @@
 import { View, Text, Modal, Pressable, StyleSheet,SafeAreaView } from 'react-native'
 import React, { useEffect, useState } from 'react'
-import { useFocusEffect, useLocalSearchParams, useNavigation } from 'expo-router'
+import { Link, useFocusEffect, useLocalSearchParams, useNavigation } from 'expo-router'
 
 interface Data{
     
@@ -24,7 +24,7 @@ useEffect(()=>{
     fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
       .then(response => response.json())
       .then(json => {
-        // console.log(json)
+        console.log(json)
         setData(json)
       })
 .catch((err)=>{
@@ -41,33 +41,38 @@ useEffect(()=>{
 
       <Text>Details{id}</Text>
       </View>
-      
-      
-      
-      <View>
 
+
+      <View key={data.id}>
+      
       <Modal
-      key={data.id}
         animationType="slide"
         transparent={true}
         >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            {/* <Text style={styles.modalText}>Name: {data.name}</Text> */}
-            <Text style={styles.modalText}>Email: {data.email}</Text>
-            <Text style={styles.modalText}>Comapny Name: {data.company.name}</Text>
-            <Text style={styles.modalText}>Street: {data.address.street}</Text>
-            <Text style={styles.modalText}>Suite No: {data.address.suite}</Text>
+            <Text style={styles.modalText}>Name: {data.name}!</Text>
+            <Text style={styles.modalText}>Email: {data.email}!</Text>
+            <Text style={styles.modalText}>Phone: {data.phone}!</Text>
+            <Text style={styles.modalText}>Address: {data.address.street
+            } , {data.address.suite} </Text>
             <Text style={styles.modalText}>City: {data.address.city}</Text>
-            <Text style={styles.modalText}>phone: {data.phone}</Text>
+            <Text style={styles.modalText}>Zip-Code: {data.address.zipcode}</Text>
+            <Text style={styles.modalText}>Website: {data.website}</Text>
+        
             <Pressable
-              style={[styles.button, styles.buttonClose]}
-              onPress={()=>{setModal(false)}}>
-              <Text style={styles.textStyle}>Close</Text>
+              style={[styles.button, styles.buttonClose]}>
+              <Link href={'/'}>
+              <Text style={styles.textStyle} >Go Back</Text>
+              
+              </Link>
             </Pressable>
           </View>
         </View>
       </Modal>
+      
+
+      
       </View>
       
 

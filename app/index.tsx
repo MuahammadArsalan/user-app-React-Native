@@ -47,7 +47,6 @@ setErr(true)
 
    })}
    
-
     </ScrollView>
   )
 }

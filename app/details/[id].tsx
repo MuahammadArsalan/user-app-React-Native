@@ -15,7 +15,7 @@ interface Data{
 
 const Details = () => {
 
-let [data ,setData] = useState<[]|''>('')
+let [data ,setData] = useState<{}|''>('')
 let [modal ,setModal] = useState(true)
 
 let {id} =useLocalSearchParams()
@@ -55,14 +55,14 @@ useEffect(()=>{
             <Text style={styles.modalText}>UserName: {data.username}!</Text>
             <Text style={styles.modalText}>Email: {data.email}!</Text>
             <Text style={styles.modalText}>Phone: {data.phone}!</Text>
-            <Text style={styles.modalText}>Address:  </Text>
-            <Text style={styles.modalText}>City: {data.address.city}</Text>
+            {/* <Text style={styles.modalText}>Address:  </Text> */}
+            {/* <Text style={styles.modalText}>City: {data.address.city}</Text> */}
             {/* <Text style={styles.modalText}>Zip-Code: {data.address.zipcode}</Text> */}
             <Text style={styles.modalText}>Website: {data.website}</Text>
         
             <Pressable
               style={[styles.button, styles.buttonClose]}>
-              <Link href={'/'}>
+              <Link href={'/'} style={styles.link}>
               <Text style={styles.textStyle} >Go Back</Text>
               
               </Link>
@@ -121,11 +121,19 @@ const styles = StyleSheet.create({
         color: 'white',
         fontWeight: 'bold',
         textAlign: 'center',
+        fontSize:15
+        
+      },
+      link:{
+        width:100,
+        padding:5,
+        textAlign:"center" 
       },
       modalText: {
         marginBottom: 15,
         textAlign: 'center',
-        fontWeight:"bold"
+        fontWeight:"bold",
+        fontSize:20,
       },
       details:{
         textAlign:"center",

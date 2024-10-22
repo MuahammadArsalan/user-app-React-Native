@@ -48,8 +48,6 @@ setErr(true)
    })}
    
 
-   
-   
     </ScrollView>
   )
 }

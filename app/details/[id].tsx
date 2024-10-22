@@ -39,7 +39,7 @@ useEffect(()=>{
     <SafeAreaView>
       <View>
 
-      <Text>Details{id}</Text>
+      <Text style={styles.details}>Details of {data.name}</Text>
       </View>
 
 
@@ -52,12 +52,12 @@ useEffect(()=>{
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
             <Text style={styles.modalText}>Name: {data.name}!</Text>
+            <Text style={styles.modalText}>UserName: {data.username}!</Text>
             <Text style={styles.modalText}>Email: {data.email}!</Text>
             <Text style={styles.modalText}>Phone: {data.phone}!</Text>
-            <Text style={styles.modalText}>Address: {data.address.street
-            } , {data.address.suite} </Text>
+            <Text style={styles.modalText}>Address:  </Text>
             <Text style={styles.modalText}>City: {data.address.city}</Text>
-            <Text style={styles.modalText}>Zip-Code: {data.address.zipcode}</Text>
+            {/* <Text style={styles.modalText}>Zip-Code: {data.address.zipcode}</Text> */}
             <Text style={styles.modalText}>Website: {data.website}</Text>
         
             <Pressable
@@ -127,6 +127,12 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontWeight:"bold"
       },
+      details:{
+        textAlign:"center",
+        margin:10,
+        fontSize:30,
+        fontWeight:"bold"
+      }
 })
 
 export default Details

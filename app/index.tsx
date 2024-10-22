@@ -52,7 +52,7 @@ setErr(true)
    
     </ScrollView>
   )
-};
+}
 
 
 const styles = StyleSheet.create({

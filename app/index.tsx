@@ -35,7 +35,7 @@ setErr(true)
     <ScrollView>
       <Text style={styles.usertxt}>User App</Text>
 
-      {loading && <Text>Loading...</Text>}
+      {loading && <Text style={styles.loading}>Loading...</Text>}
 
 {err && <Text>Error occured</Text>}
 
@@ -96,7 +96,14 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 32,
   },
-
+loading:{
+  flex:1,
+  justifyContent:"center",
+  alignItems:"center",
+  fontWeight:'bold',
+  fontSize:50,
+  textAlign:"center"
+}
 })
 
 
